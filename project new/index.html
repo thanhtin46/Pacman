@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacman</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        canvas {
+            border: 3px solid #342DCA;
+            border-radius: 5px;
+        }
+        h1 {
+            color: yellow;
+            font-family: Arial, sans-serif;
+            margin-bottom: 20px;
+        }
+        .controls {
+            color: white;
+            font-family: Arial, sans-serif;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>PACMAN</h1>
+    <canvas id="canvas" width="420" height="460"></canvas>
+    <div class="controls">
+        <p>Use Arrow Keys or WASD to move</p>
+        <p>Press R to restart when game over</p>
+    </div>
+    <div style="display: none">
+        <img id="animations" src="animations.gif" alt="pacman sprites">
+        <img id="ghosts" src="ghost.png" width="140" height="20">
+    </div>
+    <script src="game.js"></script>
+    <script src="pacman.js"></script>
+    <script src="ghost.js"></script>
+    <script>
+        createNewPacman();
+        createGhosts();
+        gameInterval = setInterval(gameLoop, 1000 / fps);
+    </script>
+</body>
+</html>
